@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FEFEFE; /* warm-white */
+    --color-foreground: #1A1A1A; /* rich-black */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #F9FAFB; /* gray-50 */
+    --color-ring: #2D5A27; /* deep-forest-green */
+    
+    /* Card Colors */
+    --color-card: #F8F9FA; /* gray-50 */
+    --color-card-foreground: #1A1A1A; /* rich-black */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A1A1A; /* rich-black */
+    
+    /* Muted Colors */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Brand Colors */
+    --color-primary: #2D5A27; /* deep-forest-green */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #8B4513; /* warm-earth-brown */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-accent: #F4A460; /* golden-harvest */
+    --color-accent-foreground: #1A1A1A; /* rich-black */
+    
+    /* Semantic Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Additional Brand Colors */
+    --color-earth: #8B4513; /* warm-earth-brown */
+    --color-earth-foreground: #FFFFFF; /* white */
+    --color-harvest: #F4A460; /* golden-harvest */
+    --color-harvest-foreground: #1A1A1A; /* rich-black */
+    --color-trust: #87CEEB; /* sky-blue */
+    --color-trust-foreground: #1A1A1A; /* rich-black */
+    --color-conversion: #D2691E; /* harvest-orange */
+    --color-conversion-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-accent {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+@layer components {
+.btn-primary  {
+    @apply bg-primary text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+.btn-secondary  {
+    @apply bg-secondary text-secondary-foreground focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+.btn-accent  {
+    @apply bg-accent text-accent-foreground focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+.btn-conversion  {
+    @apply bg-conversion text-conversion-foreground focus:ring-2 focus:ring-conversion focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .card-elevated {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm;
+    box-shadow: 0 4px 20px rgba(45, 90, 39, 0.1);
+  }
+  
+  .text-hierarchy-primary {
+    @apply text-foreground;
+  }
+  
+  .text-hierarchy-secondary {
+    @apply text-muted-foreground;
+  }
+  
+  .organic-border {
+    border-radius: 4px;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+  }
+  
+  .harvest-glow {
+    box-shadow: 0 0 20px rgba(244, 164, 96, 0.3);
+  }
+  
+  .earth-texture {
+    background-image: radial-gradient(circle at 50% 50%, rgba(139, 69, 19, 0.1) 0%, transparent 50%);
+  }
+  
+  .animate-grow {
+    animation: grow 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .animate-harvest-pulse {
+    animation: harvest-pulse 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  }
+}
+
+@layer utilities {
+  .spacing-organic {
+    margin: 8px 13px 21px 34px;
+  }
+  
+  .grid-organic {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 21px;
+  }
+  
+  .clip-organic {
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes harvest-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* Smooth scrolling for storytelling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
