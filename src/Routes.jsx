@@ -10,7 +10,7 @@ import FarmerRegistrationDashboard from 'pages/farmer-registration-dashboard';
 import CommunityMarketplace from 'pages/community-marketplace';
 import Homepage from 'pages/homepage';
 
-const Routes = () => {
+const ProjectRoutes = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
@@ -31,4 +31,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default ProjectRoutes;
